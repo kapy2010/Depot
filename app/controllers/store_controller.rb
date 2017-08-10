@@ -1,6 +1,6 @@
 class StoreController < ApplicationController
   include CurrentCart
-  before_action :set_counter
+  before_action :set_counter, :set_cart
   
   def index
     @products = Product.order(:title)

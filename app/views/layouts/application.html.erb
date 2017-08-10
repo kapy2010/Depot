@@ -17,6 +17,13 @@
         <div class="datetime">
           <%= Time.now.to_formatted_s(:short) %>
         </div>
+        
+        <% if @cart %>
+          <%= hidden_div_if(@cart.line_items.empty?, id: 'cart') do %>
+            <%= render @cart %>
+          <% end %>
+        <% end %>
+
         <ul>
           <li><a href="http://www....">Home</a></li>
           <li><a href="http://www..../faq">Questions</a></li>
